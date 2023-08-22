@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Bodega} from '../interfaces/bodega.interface';
+import {Bodega} from './interfaces/bodega.interface';
 import { AppSettings } from 'appsettings-json-reader';
 
 
@@ -17,8 +17,7 @@ export class BodegaService {
   constructor() { }
 
   getList():Observable<Bodega[]>{
-    console.log(this.backUrl)
-    return this.http.get<Bodega[]>(`${this.backUrl}/bodega/lista`);
+   return this.http.get<Bodega[]>(`${this.backUrl}/bodega/lista`);
   }
 
   add(modelo:Bodega):Observable<Bodega>{

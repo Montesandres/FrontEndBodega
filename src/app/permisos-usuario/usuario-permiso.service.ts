@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {UsuarioPermiso} from '../interfaces/usuario-permiso.interface';
+import {UsuarioPermiso} from './interfaces/usuario-permiso.interface';
 import { AppSettings } from 'appsettings-json-reader';
 
 @Injectable({
