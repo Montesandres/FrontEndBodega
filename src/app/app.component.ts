@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {BodegaService} from './services/bodega.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FrontEndBodega';
+
+  constructor(private bodegaService:BodegaService){}
+
+  ngOnInit() {
+    this.prueba();
+  }
+
+  prueba(){
+    console.log(this.bodegaService.getList());
+  }
 }
