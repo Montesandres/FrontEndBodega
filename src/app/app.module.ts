@@ -26,6 +26,7 @@ import { DialogEditComponent } from './bodegas/dialogs/dialog-edit/dialog-edit.c
 import { DialogDeleteComponent } from './bodegas/dialogs/dialog-delete/dialog-delete.component';
 import { PermisosUsuarioComponent } from './permisos-usuario/permisos-usuario.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {MatCardModule} from '@angular/material/card';
     PermisosUsuarioComponent
   ],
   imports: [
+    MatSlideToggleModule,
     MatCardModule,
     MatRadioModule,
     FormsModule ,

@@ -44,7 +44,7 @@ export class DialogEditComponent {
     if (this.datosBodega) {
       this.formBodega.patchValue({
         descripcion: this.datosBodega.boDscrpcion,
-        propia: this.datosBodega.boPrpia,
+        propia: this.datosBodega.boPrpia == true ? 1 : 0,
         planta: this.datosBodega.boPlnta,
         activa: this.datosBodega.boActva,
       });

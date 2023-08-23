@@ -9,12 +9,9 @@
                     <input matInput formControlName="descripcion" placeholder="Añada una descripción de la bodega">
                 </mat-form-field>
             </mat-grid-tile>
+           
             <mat-grid-tile>
-                <mat-label>Es propia?</mat-label>
-                  <mat-radio-group formControlName="propia" aria-label="Seleccione si o no">
-                    <mat-radio-button value=1>Si</mat-radio-button>
-                    <mat-radio-button value=0>No</mat-radio-button>
-                  </mat-radio-group>
+              <mat-slide-toggle formControlName="propia" >Es propia?</mat-slide-toggle>
             </mat-grid-tile>
             <mat-grid-tile>
                     <mat-form-field appearance="outline">
@@ -23,11 +20,7 @@
                     </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
-                    <mat-label>Está activa?</mat-label>
-                      <mat-radio-group formControlName="activa" aria-label="Seleccione si o no">
-                        <mat-radio-button value=1>Si</mat-radio-button>
-                        <mat-radio-button value=0>No</mat-radio-button>
-                      </mat-radio-group>
+              <mat-slide-toggle formControlName="activa" >Está activa?</mat-slide-toggle>
             </mat-grid-tile>
         </mat-grid-list>
     </form>
