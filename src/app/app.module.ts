@@ -24,15 +24,19 @@ import { MomentDateModule } from '@angular/material-moment-adapter';
 import { BodegasComponent } from './bodegas/bodegas.component';
 import { DialogEditComponent } from './bodegas/dialogs/dialog-edit/dialog-edit.component';
 import { DialogDeleteComponent } from './bodegas/dialogs/dialog-delete/dialog-delete.component';
+import { PermisosUsuarioComponent } from './permisos-usuario/permisos-usuario.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodegasComponent,
     DialogEditComponent,
-    DialogDeleteComponent
+    DialogDeleteComponent,
+    PermisosUsuarioComponent
   ],
   imports: [
+    MatCardModule,
     MatRadioModule,
     FormsModule ,
     MatGridListModule,

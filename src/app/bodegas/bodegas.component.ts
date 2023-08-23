@@ -17,6 +17,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class BodegasComponent implements AfterViewInit {
   displayedColumns: string[] = ['Codigo', 'Descripcion', 'Es Propia?', 'Planta', 'Esta activa?', 'Acciones'];
   dataSource = new MatTableDataSource<Bodega>();
+  upAdcnar = false;
+  upMdfcar = false;
+  upBrrar = false;
+  upLstar = false;
 
   constructor(private bodegaService:BodegaService,
     public dialog: MatDialog,
@@ -24,6 +28,14 @@ export class BodegasComponent implements AfterViewInit {
 
   ngOnInit():void{
     this.mostratBodegas();
+    this.obtenerPermisos();
+  }
+
+  obtenerPermisos(){
+    this.upAdcnar = localStorage.getItem('upAdcnar') === 'true';
+    this.upMdfcar = localStorage.getItem('upMdfcar') === 'true';
+    this.upBrrar = localStorage.getItem('upBrrar') === 'true';
+    this.upLstar = localStorage.getItem('upLstar') === 'true';
   }
 
   mostrarDialogoCrear() {

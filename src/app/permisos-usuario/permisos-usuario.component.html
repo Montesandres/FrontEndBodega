@@ -1,0 +1,33 @@
+<mat-card class="example-card card">
+    <mat-card-header style="text-align: center;">
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>Gestion de Bodegas</mat-card-title>
+      <mat-card-subtitle>Actualice, elimine y agregue sus bodegas
+        <br>
+        <br>
+        <p >
+          Escoja el usuario según el permiso: <br><br>
+          1. Visitante<br>
+          2. Administrador<br>
+          3. Coordinador<br>
+          4. Asistente<br>
+        </p>
+      </mat-card-subtitle>
+      <br>
+      
+    </mat-card-header>
+    <mat-card-content style="margin-top: 5%; display: grid; place-content: center; ">
+      <form [formGroup]="selectionForm"
+       >
+        <mat-form-field >
+          <mat-label>Escoja un usuario para acceder</mat-label>
+          <select matNativeControl required formControlName="selection" >
+            <option *ngFor="let permiso of listaPermisos" [value]="permiso.upRowid">{{ permiso.upRowid }}</option>
+          </select>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions style="display: grid; place-content: center;">
+        <button (click)="acceder()"  [disabled]="selectionForm.invalid" mat-raised-button color="primary">Acceder</button>
+    </mat-card-actions>
+  </mat-card>

@@ -1,6 +1,6 @@
 <div style="width: 80%; margin:40px auto;">
     <h1>Lista de Bodegas</h1>
-    <button style="margin-bottom: 3%; margin-top: 3%;" mat-raised-button color="primary" (click)="mostrarDialogoCrear()">Agregar Bodega</button>
+    <button style="margin-bottom: 3%; margin-top: 3%;" mat-raised-button color="primary" [disabled]="!upAdcnar" (click)="mostrarDialogoCrear()">Agregar Bodega</button>
     <div class="mat-elevation-z8">
       <mat-form-field>
         <mat-label>Filter</mat-label>
@@ -42,10 +42,10 @@
         <ng-container matColumnDef="Acciones">
             <th mat-header-cell *matHeaderCellDef> Acciones </th>
             <td mat-cell *matCellDef="let element">
-               <button (click)="mostrarDialogoEditar(element)" mat-icon-button color="primary">
+               <button [disabled]="!upMdfcar" (click)="mostrarDialogoEditar(element)" mat-icon-button color="primary">
                     <mat-icon>edit</mat-icon>
                </button>
-               <button (click)="mostrarDialogoEliminarBodega(element)"  mat-icon-button color="warn">
+               <button [disabled]="!upBrrar" (click)="mostrarDialogoEliminarBodega(element)"  mat-icon-button color="warn">
                 <mat-icon>delete</mat-icon>
            </button>
             </td>
