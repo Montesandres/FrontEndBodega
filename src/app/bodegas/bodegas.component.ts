@@ -6,6 +6,8 @@ import {MatDialog} from '@angular/material/dialog';
 import {Bodega} from './interfaces/bodega.interface';
 import {BodegaService} from './bodega.service'
 import {DialogEditComponent} from './dialogs/dialog-edit/dialog-edit.component'
+import { DialogDeleteComponent } from './dialogs/dialog-delete/dialog-delete.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-bodegas',
@@ -17,7 +19,8 @@ export class BodegasComponent implements AfterViewInit {
   dataSource = new MatTableDataSource<Bodega>();
 
   constructor(private bodegaService:BodegaService,
-    public dialog: MatDialog){}
+    public dialog: MatDialog,
+    private snackBar:MatSnackBar){}
 
   ngOnInit():void{
     this.mostratBodegas();
@@ -45,6 +48,34 @@ export class BodegasComponent implements AfterViewInit {
       }
     })
   }
+
+  mostrarDialogoEliminarBodega(bodega:Bodega){
+    this.dialog.open(DialogDeleteComponent,{
+      disableClose:true,
+      data:bodega
+    }).afterClosed().subscribe((res)=>{
+      if (res === 'eliminada'){
+        this.bodegaService.delete(bodega.boCdgo).subscribe({
+          next:(data)=>{
+            this.openAlert("La Bodega fue eliminada",'Listo');
+            this.mostratBodegas();
+          },
+          error:(e)=>(console.log(e))
+        })
+        this.mostratBodegas();
+      }
+    })
+  }
+
+  
+  openAlert(msg: string, action: string) {
+    this.snackBar.open(msg, action, {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      duration: 3000,
+    });
+  }
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

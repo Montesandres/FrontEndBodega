@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Eliminar Bodega</h1>
+<div mat-dialog-content>
+    ¿ Desea eliminar la Bodega ? "{{ datosBodega.boDscrpcion }}"
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close color="warn">Cerrar</button>
+  <button mat-raised-button color="primary" (click)="deleteConfirm()" cdkFocusInital>Eliminar</button>
+</div>

@@ -23,12 +23,14 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MomentDateModule } from '@angular/material-moment-adapter';
 import { BodegasComponent } from './bodegas/bodegas.component';
 import { DialogEditComponent } from './bodegas/dialogs/dialog-edit/dialog-edit.component';
+import { DialogDeleteComponent } from './bodegas/dialogs/dialog-delete/dialog-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodegasComponent,
-    DialogEditComponent
+    DialogEditComponent,
+    DialogDeleteComponent
   ],
   imports: [
     MatRadioModule,

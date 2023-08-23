@@ -2,8 +2,6 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-// import {MAT_DATE_FORMATS} from '@angular/material/core';
-// import * as moment from 'moment';
 import { Bodega } from '../../interfaces/bodega.interface';
 import { BodegaService } from '../../bodega.service';
 
