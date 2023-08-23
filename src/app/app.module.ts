@@ -4,7 +4,7 @@ import { HttpClientModule } from  '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
@@ -18,16 +18,21 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { MomentDateModule } from '@angular/material-moment-adapter';
 import { BodegasComponent } from './bodegas/bodegas.component';
+import { DialogEditComponent } from './bodegas/dialogs/dialog-edit/dialog-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BodegasComponent
+    BodegasComponent,
+    DialogEditComponent
   ],
   imports: [
+    MatRadioModule,
+    FormsModule ,
     MatGridListModule,
     MatDialogModule,
     MatIconModule,
